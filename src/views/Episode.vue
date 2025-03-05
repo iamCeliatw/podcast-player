@@ -70,6 +70,7 @@ watch(
   () => route.params.id,
   (newId, oldId) => {
     if (newId !== oldId) {
+      isPlaying.value = false
       if (autoPlay.value && musicContainer.value) {
         musicContainer.value.oncanplaythrough = () => {
           if (autoPlay.value) {
@@ -90,6 +91,7 @@ watch(
     width: 1280px
     margin: 0 auto
     padding: 20px
+
   &__header
     display: flex
     width: 100%
