@@ -58,7 +58,7 @@ const loadMore = () => {
 const handleScroll = () => {
   const scrollPosition = window.scrollY + window.innerHeight
   const documentHeight = document.documentElement.offsetHeight
-  if (scrollPosition >= documentHeight - 200) {
+  if (scrollPosition >= documentHeight - 300) {
     loadMore()
   }
 }
