@@ -23,7 +23,10 @@ Podcast Player 是一個基於 Vue.js 構建的單頁應用（SPA），提供 Po
    npm run dev
    ```
 
-![Demo](/demo.mp4)
+<video controls width="600">
+  <source src="demo.mp4" type="video/mp4">
+  您的瀏覽器不支援影片播放
+</video>
 
 ## Email 聯絡資訊
 
