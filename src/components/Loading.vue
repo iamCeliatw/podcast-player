@@ -25,18 +25,21 @@ onMounted(async () => {
 </script>
 
 <style lang="sass" scoped>
-.loading__container
-  width: 100%
-  height: 100%
-  position: absolute
-  top: 0
-  left: 0
-  background: rgba(0, 0, 0, 0.2)
-.loading__animation
-  width: 40vw
-  // height: 100px
-  position: absolute
-  top: 50%
-  left: 50%
-  transform: translate(-50%, -50%)
+.loading
+  &__container
+    width: 100%
+    height: 100%
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 1000
+    background: rgba(255, 255, 255, 0.4)
+    backdrop-filter: blur(2px)
+.loading
+  &__animation
+    width: 30vw
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
 </style>

@@ -1,5 +1,30 @@
-# Vue 3 + TypeScript + Vite
+# 🎧 Podcast Player
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Podcast Player 是一個基於 Vue.js 構建的單頁應用（SPA），提供 Podcast 播放功能，並支援進度控制與自動播放下一集的功能。
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+---
+
+## 🚀 開啟專案方式
+
+1. **Clone 專案**
+   ```sh
+   git clone https://github.com/iamCeliatw/podcast-player.git
+   cd podcast-player
+   ```
+2. **安裝依賴**
+
+   ```sh
+   npm install
+   ```
+
+3. **啟動開發伺服器**
+
+   ```sh
+   npm run dev
+   ```
+
+![Demo](demo.mov)
+
+## Email 聯絡資訊
+
+tina8899530@gmail.com

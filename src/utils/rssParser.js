@@ -10,10 +10,10 @@ export async function fetchPodcastData() {
     })
 
     const parser = new XMLParser({
-      attributeNamePrefix: '@_', // 屬性名稱前綴
-      ignoreAttributes: false, // 不忽略屬性
-      parseAttributeValue: true, // 解析屬性值
-      isArray: (name) => name === 'item', // 確保 `item` 是陣列
+      attributeNamePrefix: '@_', // 屬性前綴
+      ignoreAttributes: false,
+      parseAttributeValue: true,
+      isArray: (name) => name === 'item',
     })
 
     const parsedData = parser.parse(data)
@@ -23,7 +23,7 @@ export async function fetchPodcastData() {
       !parsedData.rss.channel ||
       !parsedData.rss.channel.item
     ) {
-      console.error('RSS 結構找不到')
+      console.error('RSS feed is missing required data')
       return []
     }
     const channelData = parsedData.rss.channel
@@ -41,7 +41,6 @@ export async function fetchPodcastData() {
         audioUrl = episode.link
       }
 
-      // **修正 `guid` 被包裝在 `#text` 內的問題**
       const guid =
         typeof episode.guid === 'object' ? episode.guid['#text'] : episode.guid
 
