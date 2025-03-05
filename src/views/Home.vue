@@ -1,7 +1,5 @@
 <template lang="pug">
 .home__wrapper 
-  nav.home__navbar
-    h1 {{'Podcast App'}}
   main.home__main
     .main__channel(v-if="store.podcastInfo")
       .main__channel--image(v-if="store.podcastInfo.image")
@@ -38,7 +36,6 @@ import { onUnmounted } from 'vue'
 import { type Episode } from '../types/types'
 import router from '../router'
 const store = usePodcastStore()
-// const store.podcastInfo = ref({})
 const visibleCount = ref(20)
 const hasMore = computed(() => visibleCount.value < store.episodesList.length)
 
@@ -76,7 +73,7 @@ onUnmounted(() => {
 </script>
 
 <style lang="sass" scoped>
-
+@use '../assets/_variable' as var
 .home
   &__wrapper
     width: 100%
@@ -86,22 +83,8 @@ onUnmounted(() => {
     width: 1280px
     margin: auto
     padding: 0 20px
-nav
-  height: 100px
-  background-color: #f0f0f0
-  display: flex
-  align-items: center
-  h1
-    font-size: 36px
-    margin-left: 50px
-    letter-spacing: 2px
-    color: #333
-    text-transform: uppercase
-    font-weight: 700
-    cursor: pointer
-    transition: all 0.3s
-    &:hover
-      color: #666
+    height: 100%
+
 .main
   &__channel
     display: flex
@@ -134,6 +117,7 @@ nav
       border-radius: 10px
       list-style: none
       margin-bottom: 30px
+      cursor: pointer
       &:hover
         transform: translateY(-10px)
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2)
@@ -144,13 +128,13 @@ nav
         width: 100px
         height: 100px
         border-radius: 10px
-        border: 1px solid #f0f0f0
+        border: 1px solid var.$primary-color
+        flex-shrink: 0
 
         img
           border-radius: 10px
           width: 100%
           height: 100%
-          flex-shrink: 0
       &--info
         flex-grow: 1
         padding-left: 50px
@@ -160,7 +144,7 @@ nav
         p
           margin-top: 5px
           letter-spacing: 1px
-          color: #a0a0a0
+          color: var.$gray
           font-size: 15px
       &--desc
         margin-bottom: 15px
@@ -171,11 +155,11 @@ nav
         overflow: hidden
         text-overflow: ellipsis
         letter-spacing: 1px
-        color: #333
+        color: var.$tertiary-color
 
       &--date
         span
-          color: #a0a0a0
+          color: var.$gray
           font-size: 15px
         span + span
           margin-left: 10px
