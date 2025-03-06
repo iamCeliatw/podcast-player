@@ -141,7 +141,6 @@ watch(
     width: 100%
     background: var.$primary-color
     padding: 20px
-    cursor: pointer
     audio
       width: 100%
       border-radius: 5px
