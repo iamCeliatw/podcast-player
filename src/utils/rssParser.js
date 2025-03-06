@@ -6,9 +6,10 @@ export async function fetchPodcastData() {
 
   try {
     const { data } = await axios.get(url, {
-      headers: { Accept: 'application/xml, text/xml' },
+      headers: {
+        Accept: 'application/xml, text/xml',
+      },
     })
-
     const parser = new XMLParser({
       attributeNamePrefix: '@_', // 屬性前綴
       ignoreAttributes: false,
